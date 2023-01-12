@@ -14,8 +14,8 @@ Output:
 
 */
 
-export function addExclamationPoints() {
-    return true;
+export function addExclamationPoints(excitingString) {
+    return `${excitingString}!!!`;
 }
 
 // This function should take in a number and multiply it by seven
@@ -162,9 +162,7 @@ Output:
 */
 
 export function renderDogLI(dog) {
-    // const dogName = document.createElement('li');
-    // dogName.value = dog.name;
-    // return dogName;
+    return `<li>${dog.name}</li>`;
 }
 
 // This function should take a dog object and return a div with the dog's information
@@ -179,6 +177,6 @@ Output:
 
 */
 
-export function renderDogDiv() {
-    return true;
+export function renderDogDiv(dog) {
+    return `<div><h1>${dog.name}</h1><p>${dog.name} is ${dog.age} years old</p></div>`;
 }
