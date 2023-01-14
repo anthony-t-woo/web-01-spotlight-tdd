@@ -161,22 +161,22 @@ test('should take in an array of any length and return the arrays last value', (
 test('should take in a dog object and return an <li> with the name of the dog', (expect) => {
     const expected = '<li>Mars</li>';
     const actual = renderDogLI({ name: 'Mars', age: 3 });
-    expect.deepEqual(actual, expected, 'should return <li>Mars</li>');
+    expect.deepEqual(actual.outerHTML, expected, 'should return <li>Mars</li>');
 
     const expected2 = '<li>Cake</li>';
     const actual2 = renderDogLI({ name: 'Cake', age: 2 });
-    expect.deepEqual(actual2, expected2, 'should return <li>Cake</li>');
+    expect.deepEqual(actual2.outerHTML, expected2, 'should return <li>Cake</li>');
 
     const expected3 = '<li>Chancho</li>';
     const actual3 = renderDogLI({ name: 'Chancho', age: 2.5 });
-    expect.deepEqual(actual3, expected3, 'should return <li>Chancho</li>');
+    expect.deepEqual(actual3.outerHTML, expected3, 'should return <li>Chancho</li>');
 });
 
 test('should take in a dog object and return a div with the dogs information', (expect) => {
     const expected = '<div><h1>Mars</h1><p>Mars is 3 years old</p></div>';
     const actual = renderDogDiv({ name: 'Mars', age: 3 });
     expect.deepEqual(
-        actual,
+        actual.outerHTML,
         expected,
         'should return <div><h1>Mars</h1><p>Mars is 3 years old</p></div>'
     );
@@ -184,7 +184,7 @@ test('should take in a dog object and return a div with the dogs information', (
     const expected2 = '<div><h1>Cake</h1><p>Cake is 2 years old</p></div>';
     const actual2 = renderDogDiv({ name: 'Cake', age: 2 });
     expect.deepEqual(
-        actual2,
+        actual2.outerHTML,
         expected2,
         'should return <div><h1>Cake</h1><p>Cake is 2 years old</p></div>'
     );
@@ -192,7 +192,7 @@ test('should take in a dog object and return a div with the dogs information', (
     const expected3 = '<div><h1>Chancho</h1><p>Chancho is 2.5 years old</p></div>';
     const actual3 = renderDogDiv({ name: 'Chancho', age: 2.5 });
     expect.deepEqual(
-        actual3,
+        actual3.outerHTML,
         expected3,
         'should return <div><h1>Chancho</h1><p>Chancho is 2.5 years old</p></div>'
     );

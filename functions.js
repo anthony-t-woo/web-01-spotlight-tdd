@@ -162,7 +162,9 @@ Output:
 */
 
 export function renderDogLI(dog) {
-    return `<li>${dog.name}</li>`;
+    const dogName = document.createElement('li');
+    dogName.textContent = dog.name;
+    return dogName;
 }
 
 // This function should take a dog object and return a div with the dog's information
@@ -178,5 +180,11 @@ Output:
 */
 
 export function renderDogDiv(dog) {
-    return `<div><h1>${dog.name}</h1><p>${dog.name} is ${dog.age} years old</p></div>`;
+    const dogInfoDiv = document.createElement('div');
+    const dogInfoH1 = document.createElement('h1');
+    const dogInfoP = document.createElement('p');
+    dogInfoH1.textContent = dog.name;
+    dogInfoP.textContent = `${dog.name} is ${dog.age} years old`;
+    dogInfoDiv.append(dogInfoH1, dogInfoP);
+    return dogInfoDiv;
 }
